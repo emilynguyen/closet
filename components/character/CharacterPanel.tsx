@@ -19,7 +19,12 @@ const LEFT_SLOTS: (ClothingCategory | null)[] = [
 ];
 
 const RIGHT_SLOTS: (ClothingCategory | null)[] = [
-  null, null, null, null, null, null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
   "socks",
   "shoes",
 ];
@@ -93,12 +98,13 @@ function SlotColumn({
             item={
               category === "socks"
                 ? outfit.socks?.[0]
-                : (outfit[category as keyof typeof outfit] as ClothingItem | undefined)
+                : (outfit[category as keyof typeof outfit] as
+                    | ClothingItem
+                    | undefined)
             }
             onClick={() => onClickCategory(category)}
-
           />
-        )
+        ),
       )}
     </div>
   );
@@ -114,16 +120,45 @@ export function CharacterPanel() {
     return () => document.documentElement.classList.remove("sky-active");
   }, []);
 
-  return (
-    <div className="relative flex w-full h-full items-center justify-center [container-type:size]">
-      {mounted && createPortal(<PixelSky />, document.body)}
-      <SlotColumn slots={LEFT_SLOTS} outfit={outfit} onClickCategory={setActiveCategory} />
+  function handleSlotClick(category: ClothingCategory) {
+    setActiveCategory(category);
+    if (window.innerWidth < 1024) {
+      const target = document.getElementById("inventory-panel");
+      if (!target) return;
+      const start = window.scrollY;
+      const end = target.getBoundingClientRect().top + start;
+      const duration = 600;
+      const startTime = performance.now();
+      function step(now: number) {
+        const t = Math.min((now - startTime) / duration, 1);
+        const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        window.scrollTo(0, start + (end - start) * ease);
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+  }
 
-      <div className={`h-full aspect-[60/128] min-h-0 overflow-hidden flex items-center justify-center [container-type:size] transition-all duration-200 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[12px]"}`}>
+  return (
+    <div className="relative flex w-full h-full items-center justify-center [container-type:size] lg:max-h-[66.67vw]">
+      {mounted && createPortal(<PixelSky />, document.body)}
+      <SlotColumn
+        slots={LEFT_SLOTS}
+        outfit={outfit}
+        onClickCategory={handleSlotClick}
+      />
+
+      <div
+        className={`h-full aspect-[60/128] min-h-0 overflow-hidden flex items-center justify-center [container-type:size] transition-all duration-200 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[12px]"}`}
+      >
         <CharacterCanvas />
       </div>
 
-      <SlotColumn slots={RIGHT_SLOTS} outfit={outfit} onClickCategory={setActiveCategory} />
+      <SlotColumn
+        slots={RIGHT_SLOTS}
+        outfit={outfit}
+        onClickCategory={handleSlotClick}
+      />
     </div>
   );
 }

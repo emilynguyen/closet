@@ -47,10 +47,12 @@ function InventoryItem({ item, equipped, onToggle }: InventoryItemProps) {
 
 function TabBar({
   categories,
+  activeCategory,
   getCount,
   onSelect,
 }: {
   categories: { key: ClothingCategory; label: string }[];
+  activeCategory: ClothingCategory;
   getCount: (key: ClothingCategory) => number;
   onSelect: (key: ClothingCategory) => void;
 }) {
@@ -81,7 +83,7 @@ function TabBar({
           key={key}
           onClick={() => onSelect(key)}
           style={{ borderColor: "var(--black)", borderRadius: "4px 4px 0 0" }}
-          className="shrink-0 px-3 py-1 text-[12px] font-medium uppercase border border-b-0 text-black"
+          className={`shrink-0 px-3 py-1 text-[12px] font-medium uppercase border border-b-0 ${key === activeCategory ? "bg-black text-white" : "text-black"}`}
         >
           {label} ({getCount(key)})
         </button>
@@ -143,6 +145,7 @@ export function Inventory() {
       {/* Category tabs */}
       <TabBar
         categories={CATEGORIES}
+        activeCategory={activeCategory}
         getCount={(key) => getItemsByCategory(key).length}
         onSelect={setActiveCategory}
       />
