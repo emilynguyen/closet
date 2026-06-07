@@ -34,14 +34,14 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
     const saved = localStorage.getItem("closet-outfit");
     if (saved) {
       try {
-        // Persisted as { tops?: id, bottoms?: id, shoes?: id, socks?: id[] }
-        const ids: { tops?: string; bottoms?: string; shoes?: string; socks?: string[]; hair?: string } = JSON.parse(saved);
+const ids: { tops?: string; bottoms?: string; shoes?: string; socks?: string[]; hair?: string } = JSON.parse(saved);
         const restored: CurrentOutfit = {};
         if (ids.tops && byId[ids.tops]) restored.tops = byId[ids.tops];
         if (ids.bottoms && byId[ids.bottoms]) restored.bottoms = byId[ids.bottoms];
         if (ids.shoes && byId[ids.shoes]) restored.shoes = byId[ids.shoes];
         if (ids.socks) restored.socks = ids.socks.flatMap((id) => byId[id] ? [byId[id]] : []);
         if (ids.hair && byId[ids.hair]) restored.hair = byId[ids.hair];
+        if (!restored.hair) restored.hair = byId["hair-down"];
         setOutfit(restored);
       } catch {
         // ignore malformed saved state
