@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { OutfitProvider } from "@/lib/context/outfitContext";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "em's closet",
-  description: "RPG-inspired digital wardrobe.",
+  description: "Emily's RPG-inspired digital wardrobe.",
   icons: {
     icon: [
       { url: "/favicon.ico", media: "(prefers-color-scheme: light)" },
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body>
         <OutfitProvider>{children}</OutfitProvider>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
