@@ -1,9 +1,18 @@
 "use client";
 
+import { useEffect } from "react";
 import { useOutfit } from "@/lib/context/outfitContext";
+import { clothing } from "@/lib/data/clothing";
 
 export function CharacterCanvas() {
   const { outfit } = useOutfit();
+
+  useEffect(() => {
+    clothing.forEach(({ assetPath }) => {
+      const img = new Image();
+      img.src = assetPath;
+    });
+  }, []);
 
   const layers = [
     outfit.tops,
