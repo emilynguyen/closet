@@ -31,31 +31,57 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const byId = Object.fromEntries(allClothingData.map((c) => [c.id, c]));
-    const saved = localStorage.getItem("closet-outfit");
-    if (saved) {
-      try {
-const ids: { tops?: string; bottoms?: string; shoes?: string; socks?: string[]; hair?: string } = JSON.parse(saved);
-        const restored: CurrentOutfit = {};
-        if (ids.tops && byId[ids.tops]) restored.tops = byId[ids.tops];
-        if (ids.bottoms && byId[ids.bottoms]) restored.bottoms = byId[ids.bottoms];
-        if (ids.shoes && byId[ids.shoes]) restored.shoes = byId[ids.shoes];
-        if (ids.socks) restored.socks = ids.socks.flatMap((id) => byId[id] ? [byId[id]] : []);
-        if (ids.hair && byId[ids.hair]) restored.hair = byId[ids.hair];
-        if (!restored.hair) restored.hair = byId["hair-down"];
-        setOutfit(restored);
-      } catch {
-        // ignore malformed saved state
-      }
-    } else {
-      setOutfit({
-        tops:    byId["top-white-tank"],
-        bottoms: byId["bottom-black-cargos"],
-        shoes:   byId["footwear-dr-martens-1461"],
-        socks:   [byId["accessory-white-crew-socks"]],
-        hair:    byId["hair-down"],
-      });
+
+    function preload(outfit: CurrentOutfit): Promise<void> {
+      const urls = [
+        "/assets/avatar/base.png",
+        outfit.tops?.assetPath,
+        outfit.bottoms?.assetPath,
+        outfit.shoes?.assetPath,
+        ...(outfit.socks?.map((s) => s.assetPath) ?? []),
+        outfit.hair?.assetPath,
+      ].filter((u): u is string => !!u);
+      return Promise.all(
+        urls.map((src) => new Promise<void>((resolve) => {
+          const img = new Image();
+          img.onload = img.onerror = () => resolve();
+          img.src = src;
+        }))
+      ).then(() => {});
     }
-    setIsLoaded(true);
+
+    async function init() {
+      const saved = localStorage.getItem("closet-outfit");
+      let outfit: CurrentOutfit;
+      if (saved) {
+        try {
+          const ids: { tops?: string; bottoms?: string; shoes?: string; socks?: string[]; hair?: string } = JSON.parse(saved);
+          const restored: CurrentOutfit = {};
+          if (ids.tops && byId[ids.tops]) restored.tops = byId[ids.tops];
+          if (ids.bottoms && byId[ids.bottoms]) restored.bottoms = byId[ids.bottoms];
+          if (ids.shoes && byId[ids.shoes]) restored.shoes = byId[ids.shoes];
+          if (ids.socks) restored.socks = ids.socks.flatMap((id) => byId[id] ? [byId[id]] : []);
+          if (ids.hair && byId[ids.hair]) restored.hair = byId[ids.hair];
+          if (!restored.hair) restored.hair = byId["hair-down"];
+          outfit = restored;
+        } catch {
+          outfit = {};
+        }
+      } else {
+        outfit = {
+          tops:    byId["top-white-tank"],
+          bottoms: byId["bottom-black-cargos"],
+          shoes:   byId["footwear-dr-martens-1461"],
+          socks:   [byId["accessory-white-crew-socks"]],
+          hair:    byId["hair-down"],
+        };
+      }
+      await preload(outfit);
+      setOutfit(outfit);
+      setIsLoaded(true);
+    }
+
+    init();
   }, []);
 
   useEffect(() => {
