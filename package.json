@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/generate-changelog.mjs && next build",
     "start": "next start",
     "generate-crops": "node scripts/generate-crops.mjs"
   },

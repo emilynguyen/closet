@@ -1,4 +1,6 @@
-export type ClothingCategory = "tops" | "bottoms" | "shoes" | "socks";
+export type ClothingCategory = "tops" | "bottoms" | "shoes" | "socks" | "hair";
+
+export const REQUIRED_CATEGORIES = new Set<ClothingCategory>(["hair"]);
 
 export interface ClothingItem {
   id: string;
@@ -16,4 +18,5 @@ export interface CurrentOutfit {
   bottoms?: ClothingItem;
   shoes?: ClothingItem;
   socks?: ClothingItem[];
+  hair?: ClothingItem;
 }

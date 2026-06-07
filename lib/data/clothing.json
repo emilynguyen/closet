@@ -9,6 +9,8 @@
   { "id": "top-white-one-shoulder",   "category": "tops",    "name": "White One Shoulder",        "assetPath": "/assets/clothing/tops/white%20one%20shoulder.png" },
   { "id": "top-white-tank",           "category": "tops",    "name": "White Tank",               "assetPath": "/assets/clothing/tops/white%20tank.png" },
   { "id": "top-white-tube-top",       "category": "tops",    "name": "White Tube Top",            "assetPath": "/assets/clothing/tops/white%20tube%20top.png" },
+  { "id": "top-bershka-black-tee",    "category": "tops",    "name": "Bershka Black Tee",         "assetPath": "/assets/clothing/tops/bershka%20black%20tee.png" },
+  { "id": "top-bershka-white-tee",    "category": "tops",    "name": "Bershka White Tee",         "assetPath": "/assets/clothing/tops/bershka%20white%20tee.png" },
   { "id": "bottom-bdg-jorts",                  "category": "bottoms", "name": "BDG Jorts",                "assetPath": "/assets/clothing/bottoms/bdg%20jorts.png" },
   { "id": "bottom-black-cargos",              "category": "bottoms", "name": "Black Cargos",             "assetPath": "/assets/clothing/bottoms/black%20cargos.png" },
   { "id": "bottom-black-parachute-pants",     "category": "bottoms", "name": "Black Parachute Pants",    "assetPath": "/assets/clothing/bottoms/black%20parachute%20pants.png" },
@@ -21,5 +23,7 @@
   { "id": "bottom-princess-polly-mini-skirt", "category": "bottoms", "name": "Princess Polly Mini Skirt","assetPath": "/assets/clothing/bottoms/princess%20polly%20mini%20skirt.png" },
   { "id": "footwear-dr-martens-1461",      "category": "shoes", "name": "Dr Martens 1461",        "assetPath": "/assets/clothing/shoes/dr%20martens%201461.png" },
   { "id": "accessory-black-crew-socks",    "category": "socks", "name": "Black Crew Socks",    "layer": 1, "assetPath": "/assets/clothing/socks/black%20crew%20socks.png" },
-  { "id": "accessory-white-crew-socks",    "category": "socks", "name": "White Crew Socks",    "layer": 1, "assetPath": "/assets/clothing/socks/white%20crew%20socks.png" }
+  { "id": "accessory-white-crew-socks",    "category": "socks", "name": "White Crew Socks",    "layer": 1, "assetPath": "/assets/clothing/socks/white%20crew%20socks.png" },
+  { "id": "hair-down",                     "category": "hair",  "name": "Down",                "assetPath": "/assets/clothing/hair/down.png" },
+  { "id": "hair-low-bun",                  "category": "hair",  "name": "Low Bun",             "assetPath": "/assets/clothing/hair/low%20bun.png" }
 ]

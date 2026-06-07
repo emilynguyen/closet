@@ -7,7 +7,7 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-import { ClothingItem, ClothingCategory, CurrentOutfit } from "@/lib/types/clothing";
+import { ClothingItem, ClothingCategory, CurrentOutfit, REQUIRED_CATEGORIES } from "@/lib/types/clothing";
 import { clothing as allClothingData } from "@/lib/data/clothing";
 
 interface OutfitContextType {
@@ -35,12 +35,13 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
     if (saved) {
       try {
         // Persisted as { tops?: id, bottoms?: id, shoes?: id, socks?: id[] }
-        const ids: { tops?: string; bottoms?: string; shoes?: string; socks?: string[] } = JSON.parse(saved);
+        const ids: { tops?: string; bottoms?: string; shoes?: string; socks?: string[]; hair?: string } = JSON.parse(saved);
         const restored: CurrentOutfit = {};
         if (ids.tops && byId[ids.tops]) restored.tops = byId[ids.tops];
         if (ids.bottoms && byId[ids.bottoms]) restored.bottoms = byId[ids.bottoms];
         if (ids.shoes && byId[ids.shoes]) restored.shoes = byId[ids.shoes];
         if (ids.socks) restored.socks = ids.socks.flatMap((id) => byId[id] ? [byId[id]] : []);
+        if (ids.hair && byId[ids.hair]) restored.hair = byId[ids.hair];
         setOutfit(restored);
       } catch {
         // ignore malformed saved state
@@ -51,6 +52,7 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
         bottoms: byId["bottom-black-cargos"],
         shoes:   byId["footwear-dr-martens-1461"],
         socks:   [byId["accessory-white-crew-socks"]],
+        hair:    byId["hair-down"],
       });
     }
     setIsLoaded(true);
@@ -62,6 +64,7 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
       ...(outfit.bottoms ? { bottoms: outfit.bottoms.id } : {}),
       ...(outfit.shoes ? { shoes: outfit.shoes.id } : {}),
       ...(outfit.socks?.length ? { socks: outfit.socks.map((a) => a.id) } : {}),
+      ...(outfit.hair ? { hair: outfit.hair.id } : {}),
     };
     localStorage.setItem("closet-outfit", JSON.stringify(ids));
   }, [outfit]);
@@ -83,6 +86,7 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
   }
 
   function unequip(category: ClothingCategory) {
+    if (REQUIRED_CATEGORIES.has(category)) return;
     setOutfit((prev) => {
       if (category === "socks") return { ...prev, socks: [] };
       const next = { ...prev };
@@ -95,7 +99,7 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
     if (item.category === "socks") {
       return (outfit.socks ?? []).some((a) => a.id === item.id);
     }
-    return outfit[item.category]?.id === item.id;
+    return (outfit[item.category] as ClothingItem | undefined)?.id === item.id;
   }
 
   function getItemsByCategory(category: ClothingCategory): ClothingItem[] {

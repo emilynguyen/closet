@@ -1,21 +1,22 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { ClothingCategory, ClothingItem } from "@/lib/types/clothing";
+import { ClothingCategory, ClothingItem, REQUIRED_CATEGORIES } from "@/lib/types/clothing";
 import { useOutfit } from "@/lib/context/outfitContext";
 
 interface InventoryItemProps {
   item: ClothingItem;
   equipped: boolean;
+  required: boolean;
   onToggle: () => void;
 }
 
-function InventoryItem({ item, equipped, onToggle }: InventoryItemProps) {
+function InventoryItem({ item, equipped, required, onToggle }: InventoryItemProps) {
   return (
     <button
       onClick={onToggle}
       title={item.name}
-      className="relative w-full rounded-[4px] overflow-hidden group"
+      className={`relative w-full rounded-[4px] overflow-hidden group ${equipped && required ? "!cursor-default" : ""}`}
     >
       <div className="clothing-thumbnail">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -33,8 +34,8 @@ function InventoryItem({ item, equipped, onToggle }: InventoryItemProps) {
           }}
         />
       </div>
-      <div className={`absolute inset-0 rounded-[4px] transition-colors pointer-events-none ${equipped ? "ring-1 ring-inset ring-zinc-900 bg-black/0 group-hover:bg-black/5" : "bg-black/0 group-hover:bg-black/5"}`} />
-      {equipped && (
+      <div className={`absolute inset-0 rounded-[4px] transition-colors pointer-events-none ${equipped ? "ring-1 ring-inset ring-zinc-900 bg-black/0 group-hover:bg-black/2" : "bg-black/0 group-hover:bg-black/2"}`} />
+      {equipped && !required && (
         <span className="absolute top-1.5 right-1.5 text-zinc-900 leading-none">
           <svg width="8" height="8" viewBox="0 0 10 10" fill="currentColor">
             <path d="M1 1l8 8M9 1l-8 8" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
@@ -123,6 +124,7 @@ const CATEGORIES: { key: ClothingCategory; label: string }[] = [
   { key: "bottoms", label: "Bottoms" },
   { key: "shoes", label: "Shoes" },
   { key: "socks", label: "Socks" },
+  { key: "hair", label: "Hair" },
 ];
 
 export function Inventory() {
@@ -154,12 +156,14 @@ export function Inventory() {
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 2xl:grid-cols-5 gap-[4px]">
         {items.map((item) => {
           const equipped = isEquipped(item);
+          const required = REQUIRED_CATEGORIES.has(item.category);
           return (
             <InventoryItem
               key={item.id}
               item={item}
               equipped={equipped}
-              onToggle={() => equipped ? unequip(item.category) : equip(item)}
+              required={required}
+              onToggle={() => equipped && !required ? unequip(item.category) : equip(item)}
             />
           );
         })}

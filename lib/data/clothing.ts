@@ -10,6 +10,7 @@ const CATEGORY_LAYER: Record<string, number> = {
   bottoms: 3,
   shoes: 2,
   socks: 5,
+  hair: 6,
 };
 
 type RawItem = { id: string; category: string; name: string; assetPath: string; layer?: number; tags?: string[] };

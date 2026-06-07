@@ -19,7 +19,7 @@ const LEFT_SLOTS: (ClothingCategory | null)[] = [
 ];
 
 const RIGHT_SLOTS: (ClothingCategory | null)[] = [
-  null,
+  "hair",
   null,
   null,
   null,
@@ -34,6 +34,7 @@ const CATEGORY_LABELS: Record<ClothingCategory, string> = {
   bottoms: "Bottoms",
   shoes: "Shoes",
   socks: "Socks",
+  hair: "Hair",
 };
 
 interface SlotProps {
@@ -67,7 +68,7 @@ function EquipmentSlot({ label, item, onClick }: SlotProps) {
             }}
           />
         ) : (
-          <span className="leading-tight px-1 text-center uppercase text-black/25">
+          <span className="leading-tight px-1 text-center uppercase text-black/40">
             {label}
           </span>
         )}

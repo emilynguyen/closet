@@ -19,6 +19,7 @@ export function CharacterCanvas() {
     outfit.bottoms,
     outfit.shoes,
     ...(outfit.socks ?? []),
+    outfit.hair,
   ]
     .filter((item): item is NonNullable<typeof item> => item != null)
     .sort((a, b) => a.layer - b.layer);

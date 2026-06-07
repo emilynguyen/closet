@@ -9,23 +9,25 @@
   "top-white-one-shoulder": -24.1667,
   "top-white-tank": -26.6667,
   "top-white-tube-top": -32.5,
+  "top-bershka-black-tee": -30,
+  "top-bershka-white-tee": -30,
   "bottom-bdg-jorts": -87.5,
   "bottom-black-cargos": {
-    "cropY": -82.4068,
+    "cropY": -80.9831,
     "cropScale": 0.8542
   },
   "bottom-black-parachute-pants": {
-    "cropY": -82.4068,
+    "cropY": -80.9831,
     "cropScale": 0.8542
   },
   "bottom-camo": {
-    "cropY": -82.4068,
+    "cropY": -80.9831,
     "cropScale": 0.8542
   },
   "bottom-edikted-micro-skort": -67.5,
   "bottom-edikted-skort": -66.6667,
   "bottom-grey-parachute-pants": {
-    "cropY": -82.4068,
+    "cropY": -80.9831,
     "cropScale": 0.8542
   },
   "bottom-lewkin-blue-jeans": {
@@ -39,5 +41,10 @@
   "bottom-princess-polly-mini-skirt": -69.1667,
   "footwear-dr-martens-1461": -149.1667,
   "accessory-black-crew-socks": -143.3333,
-  "accessory-white-crew-socks": -143.3333
+  "accessory-white-crew-socks": -143.3333,
+  "hair-down": {
+    "cropY": 2.4528,
+    "cropScale": 0.9509
+  },
+  "hair-low-bun": 20
 }
