@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ChangelogModal } from "./ChangelogModal";
+import buildMeta from "@/lib/data/buildMeta.json";
 
 function timeAgo(ms: number): string {
   const seconds = Math.floor(ms / 1000);
@@ -25,7 +26,7 @@ export function Footer() {
   const [showChangelog, setShowChangelog] = useState(false);
 
   useEffect(() => {
-    const buildTime = Number(process.env.NEXT_PUBLIC_BUILD_TIME);
+    const buildTime = buildMeta.buildTime;
     function update() {
       setLabel(timeAgo(Date.now() - buildTime));
     }

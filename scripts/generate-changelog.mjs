@@ -7,6 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const CLOTHING_PATH = resolve(ROOT, "lib/data/clothing.json");
 const CHANGELOG_PATH = resolve(ROOT, "lib/data/changelog.json");
+const BUILD_META_PATH = resolve(ROOT, "lib/data/buildMeta.json");
 
 function getPreviousClothing() {
   try {
@@ -58,6 +59,8 @@ const entry = {
 const changelog = JSON.parse(readFileSync(CHANGELOG_PATH, "utf8"));
 changelog.unshift(entry);
 writeFileSync(CHANGELOG_PATH, JSON.stringify(changelog, null, 2));
+
+writeFileSync(BUILD_META_PATH, JSON.stringify({ buildTime: Date.now() }, null, 2));
 
 console.log(`changelog: added entry for ${new Date().toISOString().split("T")[0]}`);
 lines.forEach((l) => console.log(`  • ${l}`));

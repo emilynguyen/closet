@@ -24,6 +24,6 @@
   { "id": "footwear-dr-martens-1461",      "category": "shoes", "name": "Dr Martens 1461",        "assetPath": "/assets/clothing/shoes/dr%20martens%201461.png" },
   { "id": "accessory-black-crew-socks",    "category": "socks", "name": "Black Crew Socks",    "layer": 1, "assetPath": "/assets/clothing/socks/black%20crew%20socks.png" },
   { "id": "accessory-white-crew-socks",    "category": "socks", "name": "White Crew Socks",    "layer": 1, "assetPath": "/assets/clothing/socks/white%20crew%20socks.png" },
-  { "id": "hair-down",                     "category": "hair",  "name": "Down",                "assetPath": "/assets/clothing/hair/down.png" },
+  { "id": "hair-down",                     "category": "hair",  "name": "Down",                "layer": 0, "assetPath": "/assets/clothing/hair/down.png" },
   { "id": "hair-low-bun",                  "category": "hair",  "name": "Low Bun",             "assetPath": "/assets/clothing/hair/low%20bun.png" }
 ]
