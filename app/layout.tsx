@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "em's closet",
-  description: "Emily's RPG-inspired digital wardrobe.",
+  description: "Emily's RPG-inspired digital closet.",
   icons: {
     icon: [
       { url: "/favicon.ico", media: "(prefers-color-scheme: light)" },
