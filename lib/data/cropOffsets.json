@@ -39,7 +39,13 @@
     "cropScale": 0.8542
   },
   "bottom-princess-polly-mini-skirt": -69.1667,
-  "footwear-dr-martens-1461": -149.1667,
+  "bottom-estudio-niksen-balloon-pants": {
+    "cropY": -84.1053,
+    "cropScale": 0.8842
+  },
+  "footwear-dr-martens-1461": -150,
+  "footwear-pointed-flats": -151.6667,
+  "footwear-steve-madden-labelle": -134.1667,
   "accessory-black-crew-socks": -143.3333,
   "accessory-white-crew-socks": -143.3333,
   "hair-down": {
