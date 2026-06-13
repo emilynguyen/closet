@@ -21,7 +21,7 @@ export function CharacterCanvas() {
     outfit.tops,
     outfit.bottoms,
     outfit.shoes,
-    ...(outfit.socks ?? []),
+    outfit.socks,
     outfit.hair,
   ].filter((item): item is NonNullable<typeof item> => item != null);
 

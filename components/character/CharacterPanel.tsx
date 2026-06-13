@@ -96,13 +96,7 @@ function SlotColumn({
             key={category}
             category={category}
             label={CATEGORY_LABELS[category]}
-            item={
-              category === "socks"
-                ? outfit.socks?.[0]
-                : (outfit[category as keyof typeof outfit] as
-                    | ClothingItem
-                    | undefined)
-            }
+            item={outfit[category as keyof typeof outfit] as ClothingItem | undefined}
             onClick={() => onClickCategory(category)}
           />
         ),

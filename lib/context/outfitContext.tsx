@@ -38,7 +38,7 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
         outfit.tops?.assetPath,
         outfit.bottoms?.assetPath,
         outfit.shoes?.assetPath,
-        ...(outfit.socks?.map((s) => s.assetPath) ?? []),
+        outfit.socks?.assetPath,
         outfit.hair?.assetPath,
       ].filter((u): u is string => !!u);
       return Promise.all(
@@ -55,12 +55,14 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
       let outfit: CurrentOutfit;
       if (saved) {
         try {
-          const ids: { tops?: string; bottoms?: string; shoes?: string; socks?: string[]; hair?: string } = JSON.parse(saved);
+          const ids: { tops?: string; bottoms?: string; shoes?: string; socks?: string | string[]; hair?: string } = JSON.parse(saved);
           const restored: CurrentOutfit = {};
           if (ids.tops && byId[ids.tops]) restored.tops = byId[ids.tops];
           if (ids.bottoms && byId[ids.bottoms]) restored.bottoms = byId[ids.bottoms];
           if (ids.shoes && byId[ids.shoes]) restored.shoes = byId[ids.shoes];
-          if (ids.socks) restored.socks = ids.socks.flatMap((id) => byId[id] ? [byId[id]] : []);
+          // socks was previously persisted as an array — take the first if so
+          const sockId = Array.isArray(ids.socks) ? ids.socks[0] : ids.socks;
+          if (sockId && byId[sockId]) restored.socks = byId[sockId];
           if (ids.hair && byId[ids.hair]) restored.hair = byId[ids.hair];
           if (!restored.hair) restored.hair = byId["hair-down"];
           outfit = restored;
@@ -72,7 +74,7 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
           tops:    byId["top-white-tank"],
           bottoms: byId["bottom-black-cargos"],
           shoes:   byId["footwear-dr-martens-1461"],
-          socks:   [byId["accessory-white-crew-socks"]],
+          socks:   byId["accessory-white-crew-socks"],
           hair:    byId["hair-down"],
         };
       }
@@ -89,32 +91,19 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
       ...(outfit.tops ? { tops: outfit.tops.id } : {}),
       ...(outfit.bottoms ? { bottoms: outfit.bottoms.id } : {}),
       ...(outfit.shoes ? { shoes: outfit.shoes.id } : {}),
-      ...(outfit.socks?.length ? { socks: outfit.socks.map((a) => a.id) } : {}),
+      ...(outfit.socks ? { socks: outfit.socks.id } : {}),
       ...(outfit.hair ? { hair: outfit.hair.id } : {}),
     };
     localStorage.setItem("closet-outfit", JSON.stringify(ids));
   }, [outfit]);
 
   function equip(item: ClothingItem) {
-    setOutfit((prev) => {
-      if (item.category === "socks") {
-        const current = prev.socks ?? [];
-        const alreadyOn = current.some((a) => a.id === item.id);
-        return {
-          ...prev,
-          socks: alreadyOn
-            ? current.filter((a) => a.id !== item.id)
-            : [...current, item],
-        };
-      }
-      return { ...prev, [item.category]: item };
-    });
+    setOutfit((prev) => ({ ...prev, [item.category]: item }));
   }
 
   function unequip(category: ClothingCategory) {
     if (REQUIRED_CATEGORIES.has(category)) return;
     setOutfit((prev) => {
-      if (category === "socks") return { ...prev, socks: [] };
       const next = { ...prev };
       delete next[category];
       return next;
@@ -122,9 +111,6 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
   }
 
   function isEquipped(item: ClothingItem): boolean {
-    if (item.category === "socks") {
-      return (outfit.socks ?? []).some((a) => a.id === item.id);
-    }
     return (outfit[item.category] as ClothingItem | undefined)?.id === item.id;
   }
 

@@ -18,6 +18,6 @@ export interface CurrentOutfit {
   tops?: ClothingItem;
   bottoms?: ClothingItem;
   shoes?: ClothingItem;
-  socks?: ClothingItem[];
+  socks?: ClothingItem;
   hair?: ClothingItem;
 }
