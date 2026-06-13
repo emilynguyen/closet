@@ -13,7 +13,7 @@ const CATEGORY_LAYER: Record<string, number> = {
   hair: 6,
 };
 
-type RawItem = { id: string; category: string; name: string; assetPath: string; layer?: number; tags?: string[] };
+type RawItem = { id: string; category: string; name: string; assetPath: string; layer?: number; tags?: string[]; undergarments?: string[] };
 
 // To add new items: edit clothing.json, then run `npm run generate-crops`.
 export const clothing: ClothingItem[] = (rawItems as RawItem[]).map((item) => ({
@@ -23,6 +23,7 @@ export const clothing: ClothingItem[] = (rawItems as RawItem[]).map((item) => ({
   assetPath: item.assetPath,
   layer: item.layer ?? CATEGORY_LAYER[item.category] ?? 5,
   ...(item.tags ? { tags: item.tags } : {}),
+  ...(item.undergarments ? { undergarments: item.undergarments } : {}),
   ...(() => {
     const entry = cropYMap[item.id];
     if (entry === undefined) return {};

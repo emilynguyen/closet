@@ -72,7 +72,7 @@ export function ChangelogModal({ onClose }: { onClose: () => void }) {
         {entries.length === 0 ? (
           <p className="text-[14px] text-black/40">No entries yet.</p>
         ) : (
-          <div className="overflow-y-auto flex flex-col gap-8 normal-case leading-[1.2] [&::-webkit-scrollbar]:hidden">
+          <div className="overflow-y-auto flex flex-col gap-8 normal-case leading-[1.2] max-h-[400px] -mt-4 sm:-mt-6 pt-4 sm:pt-6 -mb-4 sm:-mb-6 pb-4 sm:pb-6 -mr-4 sm:-mr-6 pr-4 sm:pr-6 [&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-black">
             {entries.map((entry, i) => (
               <div key={i} className="flex flex-col gap-2.5">
                 <span className="text-[12px] font-medium text-black/40 uppercase">

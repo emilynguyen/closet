@@ -95,9 +95,9 @@ function TabBar({
 }
 
 const GRID_CONFIG = {
-  base: { cols: 3, rows: 4 },
-  sm:   { cols: 4, rows: 4 },
-  md:   { cols: 5, rows: 4 },
+  base: { cols: 3, rows: 3 },
+  sm:   { cols: 4, rows: 3 },
+  md:   { cols: 5, rows: 3 },
   lg:   { cols: 4, rows: 4 },
   "2xl": { cols: 5, rows: 4 },
 } as const;
@@ -127,6 +127,8 @@ const CATEGORIES: { key: ClothingCategory; label: string }[] = [
   { key: "hair", label: "Hair" },
 ];
 
+const GAP = 4;
+
 export function Inventory() {
   const {
     activeCategory,
@@ -139,12 +141,36 @@ export function Inventory() {
 
   const items = getItemsByCategory(activeCategory);
   const { cols, rows } = useGridConfig();
+
+  // Always fill to at least cols×rows; beyond that, fill to the end of the last row
   const totalSlots = Math.max(cols * rows, Math.ceil(items.length / cols) * cols);
   const emptyCount = totalSlots - items.length;
 
+  // Measure grid width to compute exact row height for fixed-rows constraint
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [gridHeight, setGridHeight] = useState<number | undefined>(undefined);
+  const [scrollable, setScrollable] = useState(false);
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver(() => {
+      const cellSize = (el.clientWidth - GAP * (cols - 1)) / cols;
+      const h = rows * cellSize + GAP * (rows - 1);
+      setGridHeight(h);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [cols, rows]);
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el || gridHeight === undefined) return;
+    setScrollable(el.scrollHeight > Math.ceil(gridHeight));
+  }, [items, gridHeight]);
+
   return (
     <div className="flex flex-col gap-4 sm:gap-6 lg:min-h-0 lg:flex-1">
-      {/* Category tabs */}
       <TabBar
         categories={CATEGORIES}
         activeCategory={activeCategory}
@@ -152,8 +178,11 @@ export function Inventory() {
         onSelect={setActiveCategory}
       />
 
-      {/* Item grid */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 2xl:grid-cols-5 gap-[4px]">
+      <div
+        ref={gridRef}
+        style={{ maxHeight: gridHeight }}
+        className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 2xl:grid-cols-5 gap-[4px] overflow-y-auto content-start ${scrollable ? "[&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-black" : "[&::-webkit-scrollbar]:w-0"}`}
+      >
         {items.map((item) => {
           const equipped = isEquipped(item);
           const required = REQUIRED_CATEGORIES.has(item.category);

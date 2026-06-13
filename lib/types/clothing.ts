@@ -11,6 +11,7 @@ export interface ClothingItem {
   layer: number;
   cropY?: number;
   cropScale?: number;
+  undergarments?: string[];
 }
 
 export interface CurrentOutfit {
