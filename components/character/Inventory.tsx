@@ -181,7 +181,7 @@ export function Inventory() {
       <div
         ref={gridRef}
         style={gridHeight !== undefined ? { maxHeight: gridHeight } : undefined}
-        className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 2xl:grid-cols-5 gap-[4px] overflow-y-auto content-start max-h-[calc(88vw-32px)] ${scrollable ? "[&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-black" : "[&::-webkit-scrollbar]:w-0"}`}
+        className={`inventory-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 2xl:grid-cols-5 gap-[4px] overflow-y-auto content-start ${scrollable ? "[&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-black" : "[&::-webkit-scrollbar]:w-0"}`}
       >
         {items.map((item) => {
           const equipped = isEquipped(item);
