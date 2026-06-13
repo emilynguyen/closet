@@ -11,7 +11,7 @@ export default function Home() {
       </div>
 
       {/* Inventory — second on mobile, left column on md+ */}
-      <div id="inventory-panel" className="flex flex-col gap-8 bg-white/75 backdrop-blur-[10px] rounded-lg p-4 sm:p-6 lg:my-auto lg:order-1">
+      <div id="inventory-panel" className="flex flex-col gap-8 bg-white/75 backdrop-blur-[10px] rounded-lg p-4 sm:p-6 lg:my-auto lg:order-1 overflow-hidden">
         <h1
           className="header-1 shrink-0"
           style={{ fontSize: "clamp(24px, 6vw, 40px)" }}

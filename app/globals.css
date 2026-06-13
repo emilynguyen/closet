@@ -159,8 +159,47 @@ h6 {
   position: relative;
 }
 
+/* The grid's parent is a size-query container, so the grid derives both its
+   row size and visible height from its own width (cqw) — purely in CSS,
+   correct on the first paint with no JS.
+
+   grid-auto-rows = square cell size = (100cqw - (cols-1)*gap) / cols. This
+   makes rows RIGID squares so they can't be compressed by max-height; the
+   extra rows overflow and scroll instead.
+   max-height = N rows = rows*cellW + (rows-1)*gap.  (gap = 4px) */
+.inventory-grid-container {
+  container-type: inline-size;
+}
+/* max-height also includes the top+bottom padding that extends the scroll
+   viewport to the tab border and panel edge: +32px at base (p-4 gap + p-4),
+   +48px from sm up (p-6 + p-6), so the visible row count is unchanged. */
 .inventory-grid {
-  max-height: calc(88vw - 32px);
+  grid-auto-rows: calc((100cqw - 8px) / 3); /* base: 3 cols */
+  max-height: calc(100cqw + 32px);           /* × 3 rows */
+}
+@media (min-width: 640px) {
+  .inventory-grid {
+    grid-auto-rows: calc((100cqw - 12px) / 4); /* 4 cols */
+    max-height: calc(75cqw + 47px);            /* × 3 rows */
+  }
+}
+@media (min-width: 768px) {
+  .inventory-grid {
+    grid-auto-rows: calc((100cqw - 16px) / 5); /* 5 cols */
+    max-height: calc(60cqw + 46.4px);          /* × 3 rows */
+  }
+}
+@media (min-width: 1024px) {
+  .inventory-grid {
+    grid-auto-rows: calc((100cqw - 12px) / 4); /* 4 cols */
+    max-height: calc(100cqw + 48px);           /* × 4 rows */
+  }
+}
+@media (min-width: 1536px) {
+  .inventory-grid {
+    grid-auto-rows: calc((100cqw - 16px) / 5); /* 5 cols */
+    max-height: calc(80cqw + 47.2px);          /* × 4 rows */
+  }
 }
 
 @keyframes modal-in {

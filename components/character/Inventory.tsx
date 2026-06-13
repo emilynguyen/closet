@@ -144,44 +144,33 @@ export function Inventory() {
   const totalSlots = Math.max(cols * rows, Math.ceil(items.length / cols) * cols);
   const emptyCount = totalSlots - items.length;
 
-  const gridRef = useRef<HTMLDivElement>(null);
-  const [gridHeight, setGridHeight] = useState<number | undefined>(undefined);
-  const [scrollable, setScrollable] = useState(false);
-
-  const GAP = 4;
-
+  // Changing category swaps the grid's children, which makes WebKit (iOS
+  // Safari) re-anchor and jump the page scroll. Capture the scroll position on
+  // select and restore it once the new grid has rendered.
+  const scrollLock = useRef<number | null>(null);
+  function selectCategory(key: ClothingCategory) {
+    scrollLock.current = window.scrollY;
+    setActiveCategory(key);
+  }
   useLayoutEffect(() => {
-    const el = gridRef.current;
-    if (!el) return;
-    function measure() {
-      const cellSize = (el!.clientWidth - GAP * (cols - 1)) / cols;
-      setGridHeight(rows * cellSize + GAP * (rows - 1));
-    }
-    measure();
-    const observer = new ResizeObserver(measure);
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [cols, rows]);
-
-  useEffect(() => {
-    const el = gridRef.current;
-    if (!el || gridHeight === undefined) return;
-    setScrollable(el.scrollHeight > Math.ceil(gridHeight));
-  }, [items, gridHeight]);
+    if (scrollLock.current === null) return;
+    const y = scrollLock.current;
+    scrollLock.current = null;
+    window.scrollTo(0, y);
+    requestAnimationFrame(() => window.scrollTo(0, y));
+  }, [activeCategory]);
 
   return (
-    <div className="flex flex-col gap-4 sm:gap-6 lg:min-h-0 lg:flex-1">
+    <div className="inventory-grid-container flex flex-col gap-4 sm:gap-6 lg:min-h-0 lg:flex-1">
       <TabBar
         categories={CATEGORIES}
         activeCategory={activeCategory}
         getCount={(key) => getItemsByCategory(key).length}
-        onSelect={setActiveCategory}
+        onSelect={selectCategory}
       />
 
       <div
-        ref={gridRef}
-        style={gridHeight !== undefined ? { maxHeight: gridHeight } : undefined}
-        className={`inventory-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 2xl:grid-cols-5 gap-[4px] overflow-y-auto content-start ${scrollable ? "[&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-black" : "[&::-webkit-scrollbar]:w-0"}`}
+        className="inventory-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 2xl:grid-cols-5 gap-[4px] overflow-y-auto content-start -mt-4 sm:-mt-6 pt-4 sm:pt-6 -mb-4 sm:-mb-6 pb-4 sm:pb-6 -mr-4 sm:-mr-6 pr-4 sm:pr-6 [&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-black"
       >
         {items.map((item) => {
           const equipped = isEquipped(item);
