@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import { ClothingCategory, ClothingItem, REQUIRED_CATEGORIES } from "@/lib/types/clothing";
 import { useOutfit } from "@/lib/context/outfitContext";
 
@@ -127,8 +127,6 @@ const CATEGORIES: { key: ClothingCategory; label: string }[] = [
   { key: "hair", label: "Hair" },
 ];
 
-const GAP = 4;
-
 export function Inventory() {
   const {
     activeCategory,
@@ -146,19 +144,21 @@ export function Inventory() {
   const totalSlots = Math.max(cols * rows, Math.ceil(items.length / cols) * cols);
   const emptyCount = totalSlots - items.length;
 
-  // Measure grid width to compute exact row height for fixed-rows constraint
   const gridRef = useRef<HTMLDivElement>(null);
   const [gridHeight, setGridHeight] = useState<number | undefined>(undefined);
   const [scrollable, setScrollable] = useState(false);
 
-  useEffect(() => {
+  const GAP = 4;
+
+  useLayoutEffect(() => {
     const el = gridRef.current;
     if (!el) return;
-    const observer = new ResizeObserver(() => {
-      const cellSize = (el.clientWidth - GAP * (cols - 1)) / cols;
-      const h = rows * cellSize + GAP * (rows - 1);
-      setGridHeight(h);
-    });
+    function measure() {
+      const cellSize = (el!.clientWidth - GAP * (cols - 1)) / cols;
+      setGridHeight(rows * cellSize + GAP * (rows - 1));
+    }
+    measure();
+    const observer = new ResizeObserver(measure);
     observer.observe(el);
     return () => observer.disconnect();
   }, [cols, rows]);
