@@ -170,7 +170,7 @@ export function Inventory() {
   }, [items, gridHeight]);
 
   return (
-    <div className="flex flex-col gap-4 sm:gap-6 lg:min-h-0 lg:flex-1">
+    <div className="flex flex-col gap-4 sm:gap-6 lg:min-h-0 lg:flex-1 [container-type:inline-size]">
       <TabBar
         categories={CATEGORIES}
         activeCategory={activeCategory}
@@ -180,8 +180,8 @@ export function Inventory() {
 
       <div
         ref={gridRef}
-        style={{ maxHeight: gridHeight }}
-        className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 2xl:grid-cols-5 gap-[4px] overflow-y-auto content-start ${scrollable ? "[&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-black" : "[&::-webkit-scrollbar]:w-0"}`}
+        style={gridHeight !== undefined ? { maxHeight: gridHeight } : undefined}
+        className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 2xl:grid-cols-5 gap-[4px] overflow-y-auto content-start max-h-[100cqw] ${scrollable ? "[&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-black" : "[&::-webkit-scrollbar]:w-0"}`}
       >
         {items.map((item) => {
           const equipped = isEquipped(item);
