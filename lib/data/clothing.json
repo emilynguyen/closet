@@ -11,6 +11,8 @@
   { "id": "top-white-tube-top",                    "category": "tops", "name": "White Tube Top",                          "assetPath": "/assets/clothing/tops/white%20tube%20top.png" },
   { "id": "top-blue-button-down",                  "category": "tops", "name": "Blue Button-Down",                         "assetPath": "/assets/clothing/tops/blue%20button-down.png" },
   { "id": "top-white-button-down",                 "category": "tops", "name": "White Button-Down",                        "assetPath": "/assets/clothing/tops/white%20button-down.png" },
+  { "id": "top-black-asymmetrical-off-shoulder",   "category": "tops", "name": "Black Asymmetrical Off-Shoulder Top",       "assetPath": "/assets/clothing/tops/black%20asymmetrical%20off-shoulder%20top.png" },
+  { "id": "top-white-asymmetrical-off-shoulder",   "category": "tops", "name": "White Asymmetrical Off-Shoulder Top",       "assetPath": "/assets/clothing/tops/white%20asymmetrical%20off-shoulder%20top.png" },
   { "id": "top-skims-cami-bodysuit",               "category": "tops", "name": "Skims Fits Everybody Cami Bodysuit",       "layer": 2, "assetPath": "/assets/clothing/tops/skims%20fits%20everybody%20cami%20bodysuit.png", "undergarments": ["nude-underwear"] },
   { "id": "top-bershka-black-tee",    "category": "tops",    "name": "Bershka Black Tee",         "assetPath": "/assets/clothing/tops/bershka%20black%20tee.png" },
   { "id": "top-bershka-white-tee",    "category": "tops",    "name": "Bershka White Tee",         "assetPath": "/assets/clothing/tops/bershka%20white%20tee.png" },
