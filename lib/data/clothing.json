@@ -30,6 +30,8 @@
   { "id": "footwear-dr-martens-1461",         "category": "shoes", "name": "Dr Martens 1461",          "assetPath": "/assets/clothing/shoes/dr%20martens%201461.png" },
   { "id": "footwear-pointed-flats",           "category": "shoes", "name": "Pointed Flats",            "assetPath": "/assets/clothing/shoes/pointed%20flats.png" },
   { "id": "footwear-steve-madden-labelle",    "category": "shoes", "name": "Steve Madden Labelle",     "assetPath": "/assets/clothing/shoes/steve%20madden%20labelle%20boots.png" },
+  { "id": "footwear-salomon-acs-pros",        "category": "shoes", "name": "Salomon ACS Pros",          "assetPath": "/assets/clothing/shoes/salomon%20acs%20pros.png" },
+  { "id": "footwear-puma-speedcats",          "category": "shoes", "name": "Puma Speedcats",             "assetPath": "/assets/clothing/shoes/puma%20speedcats.png" },
   { "id": "accessory-black-crew-socks",    "category": "socks", "name": "Black Crew Socks",    "layer": 1, "assetPath": "/assets/clothing/socks/black%20crew%20socks.png" },
   { "id": "accessory-white-crew-socks",    "category": "socks", "name": "White Crew Socks",    "layer": 1, "assetPath": "/assets/clothing/socks/white%20crew%20socks.png" },
   { "id": "hair-down",                     "category": "hair",  "name": "Down",                "layer": 0, "assetPath": "/assets/clothing/hair/down.png" },
