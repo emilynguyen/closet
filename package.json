@@ -7,7 +7,10 @@
     "build": "next build",
     "changelog": "node scripts/generate-changelog.mjs",
     "start": "next start",
-    "generate-crops": "node scripts/generate-crops.mjs"
+    "generate-crops": "node scripts/generate-crops.mjs",
+    "add-items": "node scripts/add-items.mjs",
+    "generate-pixel-coverage": "node scripts/generate-pixel-coverage.mjs",
+    "generate-brightness": "node scripts/generate-brightness.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

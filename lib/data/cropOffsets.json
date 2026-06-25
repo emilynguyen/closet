@@ -14,6 +14,8 @@
   "top-black-asymmetrical-off-shoulder": -39.1667,
   "top-white-asymmetrical-off-shoulder": -39.1667,
   "top-skims-cami-bodysuit": -40,
+  "top-sundae-school-graffiti-logo-tee": -43.3333,
+  "top-white-sundae-patch-tee": -43.3333,
   "top-bershka-black-tee": -30,
   "top-bershka-white-tee": -30,
   "bottom-bdg-jorts": -87.5,
@@ -55,6 +57,9 @@
   "footwear-puma-speedcats": -150,
   "accessory-black-crew-socks": -143.3333,
   "accessory-white-crew-socks": -143.3333,
+  "accessory-black-nike-dri-fits": -142.5,
+  "accessory-white-nike-dri-fits": -142.5,
+  "accessory-white-ruffle-socks": -145.8333,
   "hair-down": {
     "cropY": 2.4528,
     "cropScale": 0.9509

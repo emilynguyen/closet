@@ -12,6 +12,8 @@ export interface ClothingItem {
   cropY?: number;
   cropScale?: number;
   undergarments?: string[];
+  pixelCoverage?: number;
+  brightness?: number;
 }
 
 export interface CurrentOutfit {

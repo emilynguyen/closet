@@ -1,9 +1,13 @@
 import { ClothingItem } from "@/lib/types/clothing";
 import rawItems from "./clothing.json";
 import cropOffsets from "./cropOffsets.json";
+import pixelCoverageData from "./pixelCoverage.json";
+import brightnessData from "./brightness.json";
 
 type CropEntry = number | { cropY: number; cropScale: number };
 const cropYMap = cropOffsets as Record<string, CropEntry>;
+const pixelCoverageMap = pixelCoverageData as Record<string, number>;
+const brightnessMap = brightnessData as Record<string, number>;
 
 const CATEGORY_LAYER: Record<string, number> = {
   tops: 4,
@@ -24,6 +28,8 @@ export const clothing: ClothingItem[] = (rawItems as RawItem[]).map((item) => ({
   layer: item.layer ?? CATEGORY_LAYER[item.category] ?? 5,
   ...(item.tags ? { tags: item.tags } : {}),
   ...(item.undergarments ? { undergarments: item.undergarments } : {}),
+  ...(pixelCoverageMap[item.id] != null ? { pixelCoverage: pixelCoverageMap[item.id] } : {}),
+  ...(brightnessMap[item.id] != null ? { brightness: brightnessMap[item.id] } : {}),
   ...(() => {
     const entry = cropYMap[item.id];
     if (entry === undefined) return {};

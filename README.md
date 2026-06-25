@@ -6,31 +6,30 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding New Clothing Items
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Drop PNG files into the appropriate folder under `public/assets/clothing/<category>/`
+2. Run:
+   ```bash
+   npm run add-items
+   ```
+   This detects new files, adds them to `lib/data/clothing.json`, then automatically runs `generate-crops`, `generate-pixel-coverage`, and `generate-brightness`.
+3. If any item needs special fields (e.g. `layer`, `undergarments`), edit `lib/data/clothing.json` manually.
+4. When ready to log the additions:
+   ```bash
+   npm run changelog
+   ```
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Script | Description |
+|--------|-------------|
+| `npm run add-items` | Scans asset folders for new PNGs, adds entries to `clothing.json`, and runs crop/pixel-coverage/brightness generation |
+| `npm run generate-crops` | Calculates `cropY`/`cropScale` for each item and writes to `lib/data/cropOffsets.json` |
+| `npm run generate-pixel-coverage` | Counts opaque pixels per item and writes to `lib/data/pixelCoverage.json` (used for inventory sort order) |
+| `npm run generate-brightness` | Calculates average perceptual luminance per item and writes to `lib/data/brightness.json` (used as tiebreaker in inventory sort) |
+| `npm run changelog` | Diffs `clothing.json` against the last git commit to detect new items, appends an entry to `lib/data/changelog.json`, and updates `lib/data/buildMeta.json` |

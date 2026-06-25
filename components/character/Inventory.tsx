@@ -137,7 +137,10 @@ export function Inventory() {
     isEquipped,
   } = useOutfit();
 
-  const items = getItemsByCategory(activeCategory);
+  const items = getItemsByCategory(activeCategory).slice().sort((a, b) => {
+    const diff = (a.pixelCoverage ?? 0) - (b.pixelCoverage ?? 0);
+    return diff !== 0 ? diff : (b.brightness ?? 0) - (a.brightness ?? 0);
+  });
   const { cols, rows } = useGridConfig();
 
   // Always fill to at least cols×rows; beyond that, fill to the end of the last row
