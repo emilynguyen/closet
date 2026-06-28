@@ -64,5 +64,8 @@
     "cropY": 2.4528,
     "cropScale": 0.9509
   },
-  "hair-low-bun": 20
+  "hair-low-bun": 20,
+  "top-black-out-from-under-corset": -30,
+  "top-blue-out-from-under-corset": -30,
+  "top-dr-martens-1461": -150
 }
