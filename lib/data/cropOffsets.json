@@ -67,5 +67,16 @@
   "hair-low-bun": 20,
   "top-black-out-from-under-corset": -30,
   "top-blue-out-from-under-corset": -30,
-  "top-dr-martens-1461": -150
+  "bottom-green-bdg-bobbi-pants": {
+    "cropY": -82.4068,
+    "cropScale": 0.8542
+  },
+  "bottom-white-bdg-bobbi-pants": {
+    "cropY": -82.4068,
+    "cropScale": 0.8542
+  },
+  "bottom-brown-bdg-bobbi-pants": {
+    "cropY": -82.4068,
+    "cropScale": 0.8542
+  }
 }

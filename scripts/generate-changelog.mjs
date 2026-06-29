@@ -51,8 +51,11 @@ for (const [category, names] of Object.entries(byCategory)) {
   }
 }
 
+const now = new Date();
+const localDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+
 const entry = {
-  date: new Date().toISOString().split("T")[0],
+  date: localDate,
   changes: lines,
 };
 
@@ -62,5 +65,5 @@ writeFileSync(CHANGELOG_PATH, JSON.stringify(changelog, null, 2));
 
 writeFileSync(BUILD_META_PATH, JSON.stringify({ buildTime: Date.now() }, null, 2));
 
-console.log(`changelog: added entry for ${new Date().toISOString().split("T")[0]}`);
+console.log(`changelog: added entry for ${localDate}`);
 lines.forEach((l) => console.log(`  • ${l}`));
