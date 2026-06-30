@@ -265,13 +265,15 @@
     "id": "top-black-out-from-under-corset",
     "category": "tops",
     "name": "Black Out From Under Corset",
-    "assetPath": "/assets/clothing/tops/black%20out%20from%20under%20corset.png"
+    "assetPath": "/assets/clothing/tops/black%20out%20from%20under%20corset.png",
+    "undergarments": ["nude-bra"]
   },
   {
     "id": "top-blue-out-from-under-corset",
     "category": "tops",
     "name": "Blue Out From Under Corset",
-    "assetPath": "/assets/clothing/tops/blue%20out%20from%20under%20corset.png"
+    "assetPath": "/assets/clothing/tops/blue%20out%20from%20under%20corset.png",
+    "undergarments": ["nude-bra"]
   },
   {
     "id": "bottom-green-bdg-bobbi-pants",
@@ -290,5 +292,60 @@
     "category": "bottoms",
     "name": "Brown BDG Bobbi Pants",
     "assetPath": "/assets/clothing/bottoms/brown%20BDG%20bobbi%20pants.png"
+  },
+  {
+    "id": "hair-low-bun-with-bangs",
+    "category": "hair",
+    "name": "Low Bun With Bangs",
+    "assetPath": "/assets/clothing/hair/low%20bun%20with%20bangs.png"
+  },
+  {
+    "id": "hair-low-pony-with-bangs",
+    "category": "hair",
+    "name": "Low Pony With Bangs",
+    "assetPath": "/assets/clothing/hair/low%20pony%20with%20bangs.png"
+  },
+  {
+    "id": "top-black-la-apparel-sports-bra",
+    "category": "tops",
+    "name": "Black LA Apparel Sports Bra",
+    "assetPath": "/assets/clothing/tops/black%20LA%20apparel%20sports%20bra.png"
+  },
+  {
+    "id": "top-blue-cami",
+    "category": "tops",
+    "name": "Blue Cami",
+    "assetPath": "/assets/clothing/tops/blue%20cami.png"
+  },
+  {
+    "id": "top-dune-la-apparel-sports-bra",
+    "category": "tops",
+    "name": "Dune LA Apparel Sports Bra",
+    "assetPath": "/assets/clothing/tops/dune%20LA%20apparel%20sports%20bra.png"
+  },
+  {
+    "id": "top-grey-quarter-zip",
+    "category": "tops",
+    "name": "Grey Quarter Zip",
+    "assetPath": "/assets/clothing/tops/grey%20quarter%20zip.png"
+  },
+  {
+    "id": "top-ivory-cami",
+    "category": "tops",
+    "name": "Ivory Cami",
+    "assetPath": "/assets/clothing/tops/ivory%20cami.png"
+  },
+  {
+    "id": "top-white-la-apparel-sports-bra",
+    "category": "tops",
+    "name": "White LA Apparel Sports Bra",
+    "assetPath": "/assets/clothing/tops/white%20LA%20apparel%20sports%20bra.png"
+  },
+  {
+    "id": "top-motel-rocks-yessa-crop-top",
+    "category": "tops",
+    "name": "Motel Rocks Yessa Crop Top",
+    "assetPath": "/assets/clothing/tops/motel%20rocks%20yessa%20crop%20top.png",
+    "undergarments": ["nude-bra"]
   }
 ]

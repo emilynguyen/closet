@@ -1,3 +1,4 @@
 [
-  { "id": "nude-underwear", "name": "Nude Underwear", "assetPath": "/assets/avatar/undergarments/nude%20underwear.png" }
+  { "id": "nude-underwear", "name": "Nude Underwear", "assetPath": "/assets/avatar/undergarments/nude%20underwear.png" },
+  { "id": "nude-bra", "name": "Nude Bra", "assetPath": "/assets/avatar/undergarments/nude%20bra.png" }
 ]
