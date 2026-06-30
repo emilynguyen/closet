@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, useLayoutEffect } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
 import { ClothingCategory, ClothingItem, REQUIRED_CATEGORIES } from "@/lib/types/clothing";
 import { useOutfit } from "@/lib/context/outfitContext";
 
@@ -154,6 +155,7 @@ export function Inventory() {
   function selectCategory(key: ClothingCategory) {
     scrollLock.current = window.scrollY;
     setActiveCategory(key);
+    sendGAEvent("event", "tab_select", { category: key });
   }
   useLayoutEffect(() => {
     if (scrollLock.current === null) return;
@@ -184,7 +186,15 @@ export function Inventory() {
               item={item}
               equipped={equipped}
               required={required}
-              onToggle={() => equipped && !required ? unequip(item.category) : equip(item)}
+              onToggle={() => {
+                if (equipped && !required) {
+                  unequip(item.category);
+                  sendGAEvent("event", "item_unequip", { id: item.id, name: item.name, category: item.category });
+                } else {
+                  equip(item);
+                  sendGAEvent("event", "item_equip", { id: item.id, name: item.name, category: item.category });
+                }
+              }}
             />
           );
         })}

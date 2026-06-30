@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { OutfitProvider } from "@/lib/context/outfitContext";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({
         <OutfitProvider>{children}</OutfitProvider>
         <Footer />
         <Analytics />
+        {process.env.NODE_ENV === "production" && <GoogleAnalytics gaId="G-8DEJ105GX3" />}
       </body>
     </html>
   );
