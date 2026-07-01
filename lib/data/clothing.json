@@ -39,7 +39,7 @@
     "id": "top-scuffers-green-logo",
     "category": "tops",
     "name": "Scuffers Green Logo Tee",
-    "assetPath": "/assets/clothing/tops/scuffers%20green%20logo.png"
+    "assetPath": "/assets/clothing/tops/scuffers%20green%20logo%20tee.png"
   },
   {
     "id": "top-white-one-shoulder",
@@ -138,8 +138,8 @@
   {
     "id": "bottom-camo",
     "category": "bottoms",
-    "name": "Camo",
-    "assetPath": "/assets/clothing/bottoms/camo.png"
+    "name": "Camo BDG Bobbi Pants",
+    "assetPath": "/assets/clothing/bottoms/camo%20BDG%20bobbi%20pants.png"
   },
   {
     "id": "bottom-edikted-micro-skort",
@@ -266,14 +266,18 @@
     "category": "tops",
     "name": "Black Out From Under Corset",
     "assetPath": "/assets/clothing/tops/black%20out%20from%20under%20corset.png",
-    "undergarments": ["nude-bra"]
+    "undergarments": [
+      "nude-bra"
+    ]
   },
   {
     "id": "top-blue-out-from-under-corset",
     "category": "tops",
     "name": "Blue Out From Under Corset",
     "assetPath": "/assets/clothing/tops/blue%20out%20from%20under%20corset.png",
-    "undergarments": ["nude-bra"]
+    "undergarments": [
+      "nude-bra"
+    ]
   },
   {
     "id": "bottom-green-bdg-bobbi-pants",
@@ -346,6 +350,20 @@
     "category": "tops",
     "name": "Motel Rocks Yessa Crop Top",
     "assetPath": "/assets/clothing/tops/motel%20rocks%20yessa%20crop%20top.png",
-    "undergarments": ["nude-bra"]
+    "undergarments": [
+      "nude-bra"
+    ]
+  },
+  {
+    "id": "top-grey-button-down",
+    "category": "tops",
+    "name": "Grey Button-Down",
+    "assetPath": "/assets/clothing/tops/grey%20button-down.png"
+  },
+  {
+    "id": "top-scuffers-double-polo-grey",
+    "category": "tops",
+    "name": "Scuffers Double Polo Grey",
+    "assetPath": "/assets/clothing/tops/scuffers%20double%20polo%20grey.png"
   }
 ]

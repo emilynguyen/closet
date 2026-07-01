@@ -72,8 +72,8 @@ export function OutfitProvider({ children }: { children: ReactNode }) {
       } else {
         outfit = {
           tops:    byId["top-white-tank"],
-          bottoms: byId["bottom-black-cargos"],
-          shoes:   byId["footwear-dr-martens-1461"],
+          bottoms: byId["bottom-black-parachute-pants"],
+          shoes:   byId["footwear-salomon-acs-pros"],
           socks:   byId["accessory-white-crew-socks"],
           hair:    byId["hair-down"],
         };

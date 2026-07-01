@@ -138,8 +138,11 @@ export function Inventory() {
     isEquipped,
   } = useOutfit();
 
+  const descending = (["tops", "bottoms", "hair"] as ClothingCategory[]).includes(activeCategory);
   const items = getItemsByCategory(activeCategory).slice().sort((a, b) => {
-    const diff = (a.pixelCoverage ?? 0) - (b.pixelCoverage ?? 0);
+    const diff = descending
+      ? (b.pixelCoverage ?? 0) - (a.pixelCoverage ?? 0)
+      : (a.pixelCoverage ?? 0) - (b.pixelCoverage ?? 0);
     return diff !== 0 ? diff : (b.brightness ?? 0) - (a.brightness ?? 0);
   });
   const { cols, rows } = useGridConfig();
@@ -189,7 +192,6 @@ export function Inventory() {
               onToggle={() => {
                 if (equipped && !required) {
                   unequip(item.category);
-                  sendGAEvent("event", "item_unequip", { id: item.id, name: item.name, category: item.category });
                 } else {
                   equip(item);
                   sendGAEvent("event", "item_equip", { id: item.id, name: item.name, category: item.category });
