@@ -139,11 +139,31 @@ export function Inventory() {
   } = useOutfit();
 
   const descending = (["tops", "bottoms", "hair"] as ClothingCategory[]).includes(activeCategory);
-  const items = getItemsByCategory(activeCategory).slice().sort((a, b) => {
-    const diff = descending
-      ? (b.pixelCoverage ?? 0) - (a.pixelCoverage ?? 0)
-      : (a.pixelCoverage ?? 0) - (b.pixelCoverage ?? 0);
-    return diff !== 0 ? diff : (b.brightness ?? 0) - (a.brightness ?? 0);
+  const allCategoryItems = getItemsByCategory(activeCategory);
+
+  function groupKey(name: string): string {
+    const bracket = name.indexOf(" [");
+    return bracket !== -1 ? name.slice(0, bracket) : name;
+  }
+
+  // Compute average pixelCoverage per group key
+  const groupCoverage: Record<string, number> = {};
+  const groupCounts: Record<string, number> = {};
+  for (const item of allCategoryItems) {
+    const key = groupKey(item.name);
+    groupCoverage[key] = (groupCoverage[key] ?? 0) + (item.pixelCoverage ?? 0);
+    groupCounts[key] = (groupCounts[key] ?? 0) + 1;
+  }
+  for (const key of Object.keys(groupCoverage)) {
+    groupCoverage[key] /= groupCounts[key];
+  }
+
+  const items = allCategoryItems.slice().sort((a, b) => {
+    const aCoverage = groupCoverage[groupKey(a.name)] ?? (a.pixelCoverage ?? 0);
+    const bCoverage = groupCoverage[groupKey(b.name)] ?? (b.pixelCoverage ?? 0);
+    const coverageDiff = descending ? bCoverage - aCoverage : aCoverage - bCoverage;
+    if (coverageDiff !== 0) return coverageDiff;
+    return (b.brightness ?? 0) - (a.brightness ?? 0);
   });
   const { cols, rows } = useGridConfig();
 

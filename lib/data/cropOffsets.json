@@ -10,7 +10,7 @@
   "top-white-tank": -26.6667,
   "top-white-tube-top": -32.5,
   "top-blue-button-down": -44.1667,
-  "top-white-button-down": -44.1667,
+  "top-white-button-down": -43.3333,
   "top-black-asymmetrical-off-shoulder": -39.1667,
   "top-white-asymmetrical-off-shoulder": -39.1667,
   "top-skims-cami-bodysuit": -40,
@@ -28,7 +28,7 @@
     "cropScale": 0.8542
   },
   "bottom-camo": {
-    "cropY": -80.9831,
+    "cropY": -82.4068,
     "cropScale": 0.8542
   },
   "bottom-edikted-micro-skort": -67.5,
@@ -88,6 +88,16 @@
   "top-ivory-cami": -28.3333,
   "top-white-la-apparel-sports-bra": -20,
   "top-motel-rocks-yessa-crop-top": -20.8333,
-  "top-grey-button-down": -44.1667,
-  "top-scuffers-double-polo-grey": -39.1667
+  "top-grey-button-down": -42.5,
+  "top-scuffers-double-polo-grey": -39.1667,
+  "top-black-open-back-cropped-long-sleeve": -38.3333,
+  "top-grey-open-back-cropped-long-sleeve": -38.3333,
+  "top-white-open-back-cropped-long-sleeve": -38.3333,
+  "top-tank-brown": -26.6667,
+  "top-single-strap-contour-bralette": -20,
+  "bottom-bermuda-slacks-shorts": -89.1667,
+  "bottom-track-pants": {
+    "cropY": -83.9655,
+    "cropScale": 0.869
+  }
 }

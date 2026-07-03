@@ -2,86 +2,86 @@
   {
     "id": "top-black-cami",
     "category": "tops",
-    "name": "Black Cami",
-    "assetPath": "/assets/clothing/tops/black%20cami.png"
+    "name": "Cami [Black]",
+    "assetPath": "/assets/clothing/tops/cami%20%5Bblack%5D.png"
   },
   {
     "id": "top-black-one-shoulder",
     "category": "tops",
-    "name": "Black One Shoulder",
-    "assetPath": "/assets/clothing/tops/black%20one%20shoulder.png"
+    "name": "One Shoulder [Black]",
+    "assetPath": "/assets/clothing/tops/one%20shoulder%20%5Bblack%5D.png"
   },
   {
     "id": "top-black-tube-top",
     "category": "tops",
-    "name": "Black Tube Top",
-    "assetPath": "/assets/clothing/tops/black%20tube%20top.png"
+    "name": "Tube Top [Black]",
+    "assetPath": "/assets/clothing/tops/tube%20top%20%5Bblack%5D.png"
   },
   {
     "id": "top-brown-cami",
     "category": "tops",
-    "name": "Brown Cami",
-    "assetPath": "/assets/clothing/tops/brown%20cami.png"
+    "name": "Cami [Brown]",
+    "assetPath": "/assets/clothing/tops/cami%20%5Bbrown%5D.png"
   },
   {
     "id": "top-brown-tube-top",
     "category": "tops",
-    "name": "Brown Tube Top",
-    "assetPath": "/assets/clothing/tops/brown%20tube%20top.png"
+    "name": "Tube Top [Brown]",
+    "assetPath": "/assets/clothing/tops/tube%20top%20%5Bbrown%5D.png"
   },
   {
     "id": "top-grey-one-shoulder",
     "category": "tops",
-    "name": "Grey One Shoulder",
-    "assetPath": "/assets/clothing/tops/grey%20one%20shoulder.png"
+    "name": "One Shoulder [Grey]",
+    "assetPath": "/assets/clothing/tops/one%20shoulder%20%5Bgrey%5D.png"
   },
   {
     "id": "top-scuffers-green-logo",
     "category": "tops",
-    "name": "Scuffers Green Logo Tee",
-    "assetPath": "/assets/clothing/tops/scuffers%20green%20logo%20tee.png"
+    "name": "Scuffers Logo Tee [Green]",
+    "assetPath": "/assets/clothing/tops/scuffers%20logo%20tee%20%5Bgreen%5D.png"
   },
   {
     "id": "top-white-one-shoulder",
     "category": "tops",
-    "name": "White One Shoulder",
-    "assetPath": "/assets/clothing/tops/white%20one%20shoulder.png"
+    "name": "One Shoulder [White]",
+    "assetPath": "/assets/clothing/tops/one%20shoulder%20%5Bwhite%5D.png"
   },
   {
     "id": "top-white-tank",
     "category": "tops",
-    "name": "White Tank",
-    "assetPath": "/assets/clothing/tops/white%20tank.png"
+    "name": "Tank [White]",
+    "assetPath": "/assets/clothing/tops/tank%20%5Bwhite%5D.png"
   },
   {
     "id": "top-white-tube-top",
     "category": "tops",
-    "name": "White Tube Top",
-    "assetPath": "/assets/clothing/tops/white%20tube%20top.png"
+    "name": "Tube Top [White]",
+    "assetPath": "/assets/clothing/tops/tube%20top%20%5Bwhite%5D.png"
   },
   {
     "id": "top-blue-button-down",
     "category": "tops",
-    "name": "Blue Button-Down",
-    "assetPath": "/assets/clothing/tops/blue%20button-down.png"
+    "name": "Button-Down [Blue]",
+    "assetPath": "/assets/clothing/tops/button-down%20%5Bblue%5D.png"
   },
   {
     "id": "top-white-button-down",
     "category": "tops",
-    "name": "White Button-Down",
-    "assetPath": "/assets/clothing/tops/white%20button-down.png"
+    "name": "Button-Down [White]",
+    "assetPath": "/assets/clothing/tops/button-down%20%5Bwhite%5D.png"
   },
   {
     "id": "top-black-asymmetrical-off-shoulder",
     "category": "tops",
-    "name": "Black Asymmetrical Off-Shoulder Top",
-    "assetPath": "/assets/clothing/tops/black%20asymmetrical%20off-shoulder%20top.png"
+    "name": "Asymmetrical Off-Shoulder Top [Black]",
+    "assetPath": "/assets/clothing/tops/asymmetrical%20off-shoulder%20top%20%5Bblack%5D.png"
   },
   {
     "id": "top-white-asymmetrical-off-shoulder",
     "category": "tops",
-    "name": "White Asymmetrical Off-Shoulder Top",
-    "assetPath": "/assets/clothing/tops/white%20asymmetrical%20off-shoulder%20top.png"
+    "name": "Asymmetrical Off-Shoulder Top [White]",
+    "assetPath": "/assets/clothing/tops/asymmetrical%20off-shoulder%20top%20%5Bwhite%5D.png"
   },
   {
     "id": "top-skims-cami-bodysuit",
@@ -102,20 +102,20 @@
   {
     "id": "top-white-sundae-patch-tee",
     "category": "tops",
-    "name": "White Sundae Patch Tee",
-    "assetPath": "/assets/clothing/tops/white%20sundae%20patch%20tee.png"
+    "name": "Sundae Patch Tee [White]",
+    "assetPath": "/assets/clothing/tops/sundae%20patch%20tee%20%5Bwhite%5D.png"
   },
   {
     "id": "top-bershka-black-tee",
     "category": "tops",
-    "name": "Black Cropped Tee",
-    "assetPath": "/assets/clothing/tops/bershka%20black%20tee.png"
+    "name": "Cropped Tee [Black]",
+    "assetPath": "/assets/clothing/tops/cropped%20tee%20%5Bblack%5D.png"
   },
   {
     "id": "top-bershka-white-tee",
     "category": "tops",
-    "name": "White Cropped Tee",
-    "assetPath": "/assets/clothing/tops/bershka%20white%20tee.png"
+    "name": "Cropped Tee [White]",
+    "assetPath": "/assets/clothing/tops/cropped%20tee%20%5Bwhite%5D.png"
   },
   {
     "id": "bottom-bdg-jorts",
@@ -126,20 +126,20 @@
   {
     "id": "bottom-black-cargos",
     "category": "bottoms",
-    "name": "Black Cargos",
-    "assetPath": "/assets/clothing/bottoms/black%20cargos.png"
+    "name": "Taka Cargos [Black]",
+    "assetPath": "/assets/clothing/bottoms/taka%20cargos%20%5Bblack%5D.png"
   },
   {
     "id": "bottom-black-parachute-pants",
     "category": "bottoms",
-    "name": "Black Parachute Pants",
-    "assetPath": "/assets/clothing/bottoms/black%20parachute%20pants.png"
+    "name": "Jaded London Parachute Pants [Black]",
+    "assetPath": "/assets/clothing/bottoms/jaded%20london%20parachute%20pants%20%5Bblack%5D.png"
   },
   {
     "id": "bottom-camo",
     "category": "bottoms",
-    "name": "Camo BDG Bobbi Pants",
-    "assetPath": "/assets/clothing/bottoms/camo%20BDG%20bobbi%20pants.png"
+    "name": "BDG Bobbi Pants [Camo]",
+    "assetPath": "/assets/clothing/bottoms/bdg%20bobbi%20pants%20%5Bcamo%5D.png"
   },
   {
     "id": "bottom-edikted-micro-skort",
@@ -156,20 +156,20 @@
   {
     "id": "bottom-grey-parachute-pants",
     "category": "bottoms",
-    "name": "Grey Parachute Pants",
-    "assetPath": "/assets/clothing/bottoms/grey%20parachute%20pants.png"
+    "name": "Jaded London Parachute Pants [Grey]",
+    "assetPath": "/assets/clothing/bottoms/jaded%20london%20parachute%20pants%20%5Bgrey%5D.png"
   },
   {
     "id": "bottom-lewkin-blue-jeans",
     "category": "bottoms",
-    "name": "Lewkin Blue Jeans",
-    "assetPath": "/assets/clothing/bottoms/lewkin%20blue%20jeans.png"
+    "name": "Lewkin Jeans [Blue]",
+    "assetPath": "/assets/clothing/bottoms/lewkin%20jeans%20%5Bblue%5D.png"
   },
   {
     "id": "bottom-lewkin-grey-jeans",
     "category": "bottoms",
-    "name": "Lewkin Grey Jeans",
-    "assetPath": "/assets/clothing/bottoms/lewkin%20grey%20jeans.png"
+    "name": "Lewkin Jeans [Grey]",
+    "assetPath": "/assets/clothing/bottoms/lewkin%20jeans%20%5Bgrey%5D.png"
   },
   {
     "id": "bottom-princess-polly-mini-skirt",
@@ -216,37 +216,37 @@
   {
     "id": "accessory-black-crew-socks",
     "category": "socks",
-    "name": "Black Crew Socks",
+    "name": "Crew Socks [Black]",
     "layer": 1,
-    "assetPath": "/assets/clothing/socks/black%20crew%20socks.png"
+    "assetPath": "/assets/clothing/socks/crew%20socks%20%5Bblack%5D.png"
   },
   {
     "id": "accessory-white-crew-socks",
     "category": "socks",
-    "name": "White Crew Socks",
+    "name": "Crew Socks [White]",
     "layer": 1,
-    "assetPath": "/assets/clothing/socks/white%20crew%20socks.png"
+    "assetPath": "/assets/clothing/socks/crew%20socks%20%5Bwhite%5D.png"
   },
   {
     "id": "accessory-black-nike-dri-fits",
     "category": "socks",
-    "name": "Black Nike Dri-Fits",
+    "name": "Nike Dri-Fits [Black]",
     "layer": 1,
-    "assetPath": "/assets/clothing/socks/black%20nike%20dri-fits.png"
+    "assetPath": "/assets/clothing/socks/nike%20dri-fits%20%5Bblack%5D.png"
   },
   {
     "id": "accessory-white-nike-dri-fits",
     "category": "socks",
-    "name": "White Nike Dri-Fits",
+    "name": "Nike Dri-Fits [White]",
     "layer": 1,
-    "assetPath": "/assets/clothing/socks/white%20nike%20dri-fits.png"
+    "assetPath": "/assets/clothing/socks/nike%20dri-fits%20%5Bwhite%5D.png"
   },
   {
     "id": "accessory-white-ruffle-socks",
     "category": "socks",
-    "name": "White Ruffle Socks",
+    "name": "Ruffle Socks [White]",
     "layer": 1,
-    "assetPath": "/assets/clothing/socks/white%20ruffle%20socks.png"
+    "assetPath": "/assets/clothing/socks/ruffle%20socks%20%5Bwhite%5D.png"
   },
   {
     "id": "hair-down",
@@ -264,8 +264,8 @@
   {
     "id": "top-black-out-from-under-corset",
     "category": "tops",
-    "name": "Black Out From Under Corset",
-    "assetPath": "/assets/clothing/tops/black%20out%20from%20under%20corset.png",
+    "name": "Out From Under Corset [Black]",
+    "assetPath": "/assets/clothing/tops/out%20from%20under%20corset%20%5Bblack%5D.png",
     "undergarments": [
       "nude-bra"
     ]
@@ -273,8 +273,8 @@
   {
     "id": "top-blue-out-from-under-corset",
     "category": "tops",
-    "name": "Blue Out From Under Corset",
-    "assetPath": "/assets/clothing/tops/blue%20out%20from%20under%20corset.png",
+    "name": "Out From Under Corset [Blue]",
+    "assetPath": "/assets/clothing/tops/out%20from%20under%20corset%20%5Bblue%5D.png",
     "undergarments": [
       "nude-bra"
     ]
@@ -282,20 +282,20 @@
   {
     "id": "bottom-green-bdg-bobbi-pants",
     "category": "bottoms",
-    "name": "Green BDG Bobbi Pants",
-    "assetPath": "/assets/clothing/bottoms/green%20BDG%20bobbi%20pants.png"
+    "name": "BDG Bobbi Pants [Green]",
+    "assetPath": "/assets/clothing/bottoms/bdg%20bobbi%20pants%20%5Bgreen%5D.png"
   },
   {
     "id": "bottom-white-bdg-bobbi-pants",
     "category": "bottoms",
-    "name": "White BDG Bobbi Pants",
-    "assetPath": "/assets/clothing/bottoms/white%20BDG%20bobbi%20pants.png"
+    "name": "BDG Bobbi Pants [White]",
+    "assetPath": "/assets/clothing/bottoms/bdg%20bobbi%20pants%20%5Bwhite%5D.png"
   },
   {
     "id": "bottom-brown-bdg-bobbi-pants",
     "category": "bottoms",
-    "name": "Brown BDG Bobbi Pants",
-    "assetPath": "/assets/clothing/bottoms/brown%20BDG%20bobbi%20pants.png"
+    "name": "BDG Bobbi Pants [Brown]",
+    "assetPath": "/assets/clothing/bottoms/bdg%20bobbi%20pants%20%5Bbrown%5D.png"
   },
   {
     "id": "hair-low-bun-with-bangs",
@@ -312,38 +312,38 @@
   {
     "id": "top-black-la-apparel-sports-bra",
     "category": "tops",
-    "name": "Black LA Apparel Sports Bra",
-    "assetPath": "/assets/clothing/tops/black%20LA%20apparel%20sports%20bra.png"
+    "name": "LA Apparel Sports Bra [Black]",
+    "assetPath": "/assets/clothing/tops/la%20apparel%20sports%20bra%20%5Bblack%5D.png"
   },
   {
     "id": "top-blue-cami",
     "category": "tops",
-    "name": "Blue Cami",
-    "assetPath": "/assets/clothing/tops/blue%20cami.png"
+    "name": "Cami [Blue]",
+    "assetPath": "/assets/clothing/tops/cami%20%5Bblue%5D.png"
   },
   {
     "id": "top-dune-la-apparel-sports-bra",
     "category": "tops",
-    "name": "Dune LA Apparel Sports Bra",
-    "assetPath": "/assets/clothing/tops/dune%20LA%20apparel%20sports%20bra.png"
+    "name": "LA Apparel Sports Bra [Dune]",
+    "assetPath": "/assets/clothing/tops/la%20apparel%20sports%20bra%20%5Bdune%5D.png"
   },
   {
     "id": "top-grey-quarter-zip",
     "category": "tops",
-    "name": "Grey Quarter Zip",
-    "assetPath": "/assets/clothing/tops/grey%20quarter%20zip.png"
+    "name": "Quarter Zip [Grey]",
+    "assetPath": "/assets/clothing/tops/quarter%20zip%20%5Bgrey%5D.png"
   },
   {
     "id": "top-ivory-cami",
     "category": "tops",
-    "name": "Ivory Cami",
-    "assetPath": "/assets/clothing/tops/ivory%20cami.png"
+    "name": "Cami [Ivory]",
+    "assetPath": "/assets/clothing/tops/cami%20%5Bivory%5D.png"
   },
   {
     "id": "top-white-la-apparel-sports-bra",
     "category": "tops",
-    "name": "White LA Apparel Sports Bra",
-    "assetPath": "/assets/clothing/tops/white%20LA%20apparel%20sports%20bra.png"
+    "name": "LA Apparel Sports Bra [White]",
+    "assetPath": "/assets/clothing/tops/la%20apparel%20sports%20bra%20%5Bwhite%5D.png"
   },
   {
     "id": "top-motel-rocks-yessa-crop-top",
@@ -357,13 +357,55 @@
   {
     "id": "top-grey-button-down",
     "category": "tops",
-    "name": "Grey Button-Down",
-    "assetPath": "/assets/clothing/tops/grey%20button-down.png"
+    "name": "Button-Down [Grey]",
+    "assetPath": "/assets/clothing/tops/button-down%20%5Bgrey%5D.png"
   },
   {
     "id": "top-scuffers-double-polo-grey",
     "category": "tops",
-    "name": "Scuffers Double Polo Grey",
-    "assetPath": "/assets/clothing/tops/scuffers%20double%20polo%20grey.png"
+    "name": "Scuffers Double Polo [Grey]",
+    "assetPath": "/assets/clothing/tops/scuffers%20double%20polo%20%5Bgrey%5D.png"
+  },
+  {
+    "id": "top-black-open-back-cropped-long-sleeve",
+    "category": "tops",
+    "name": "Open Back Cropped Long Sleeve [Black]",
+    "assetPath": "/assets/clothing/tops/open%20back%20cropped%20long%20sleeve%20%5Bblack%5D.png"
+  },
+  {
+    "id": "top-grey-open-back-cropped-long-sleeve",
+    "category": "tops",
+    "name": "Open Back Cropped Long Sleeve [Grey]",
+    "assetPath": "/assets/clothing/tops/open%20back%20cropped%20long%20sleeve%20%5Bgrey%5D.png"
+  },
+  {
+    "id": "top-white-open-back-cropped-long-sleeve",
+    "category": "tops",
+    "name": "Open Back Cropped Long Sleeve [White]",
+    "assetPath": "/assets/clothing/tops/open%20back%20cropped%20long%20sleeve%20%5Bwhite%5D.png"
+  },
+  {
+    "id": "top-tank-brown",
+    "category": "tops",
+    "name": "Tank [Brown]",
+    "assetPath": "/assets/clothing/tops/tank%20%5Bbrown%5D.png"
+  },
+  {
+    "id": "top-single-strap-contour-bralette",
+    "category": "tops",
+    "name": "Single Strap Contour Bralette",
+    "assetPath": "/assets/clothing/tops/single%20strap%20contour%20bralette.png"
+  },
+  {
+    "id": "bottom-bermuda-slacks-shorts",
+    "category": "bottoms",
+    "name": "Bermuda Slacks Shorts",
+    "assetPath": "/assets/clothing/bottoms/bermuda%20slacks%20shorts.png"
+  },
+  {
+    "id": "bottom-track-pants",
+    "category": "bottoms",
+    "name": "Track Pants",
+    "assetPath": "/assets/clothing/bottoms/track%20pants.png"
   }
 ]
