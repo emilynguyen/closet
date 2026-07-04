@@ -5,7 +5,7 @@
   "top-brown-cami": -28.3333,
   "top-brown-tube-top": -32.5,
   "top-grey-one-shoulder": -24.1667,
-  "top-scuffers-green-logo": -39.1667,
+  "top-scuffers-green-logo": -40,
   "top-white-one-shoulder": -24.1667,
   "top-white-tank": -26.6667,
   "top-white-tube-top": -32.5,
@@ -51,15 +51,15 @@
     "cropScale": 0.8842
   },
   "footwear-dr-martens-1461": -150,
-  "footwear-pointed-flats": -151.6667,
+  "footwear-pointed-flats": -152.5,
   "footwear-steve-madden-labelle": -134.1667,
   "footwear-salomon-acs-pros": -150,
   "footwear-puma-speedcats": -150,
-  "accessory-black-crew-socks": -143.3333,
-  "accessory-white-crew-socks": -143.3333,
-  "accessory-black-nike-dri-fits": -142.5,
-  "accessory-white-nike-dri-fits": -142.5,
-  "accessory-white-ruffle-socks": -145.8333,
+  "accessory-black-crew-socks": -145,
+  "accessory-white-crew-socks": -145,
+  "accessory-black-nike-dri-fits": -144.1667,
+  "accessory-white-nike-dri-fits": -144.1667,
+  "accessory-white-ruffle-socks": -147.5,
   "hair-down": {
     "cropY": 2.4528,
     "cropScale": 0.9509
@@ -99,5 +99,8 @@
   "bottom-track-pants": {
     "cropY": -83.9655,
     "cropScale": 0.869
-  }
+  },
+  "footwear-dr-martens-temara-loafers": -150.8333,
+  "footwear-princess-polly-billini-sidney-heels": -154.1667,
+  "footwear-princess-polly-britta-heels": -154.1667
 }

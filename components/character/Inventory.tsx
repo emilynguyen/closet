@@ -178,7 +178,8 @@ export function Inventory() {
   function selectCategory(key: ClothingCategory) {
     scrollLock.current = window.scrollY;
     setActiveCategory(key);
-    sendGAEvent("event", "tab_select", { category: key });
+    const label = CATEGORIES.find((c) => c.key === key)?.label ?? key;
+    sendGAEvent("event", "tab_select", { category: key, name: label });
   }
   useLayoutEffect(() => {
     if (scrollLock.current === null) return;

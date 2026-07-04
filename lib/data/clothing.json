@@ -407,5 +407,23 @@
     "category": "bottoms",
     "name": "Track Pants",
     "assetPath": "/assets/clothing/bottoms/track%20pants.png"
+  },
+  {
+    "id": "footwear-dr-martens-temara-loafers",
+    "category": "shoes",
+    "name": "Dr Martens Temara Loafers",
+    "assetPath": "/assets/clothing/shoes/dr%20martens%20temara%20loafers.png"
+  },
+  {
+    "id": "footwear-princess-polly-billini-sidney-heels",
+    "category": "shoes",
+    "name": "Princess Polly Billini Sidney Heels",
+    "assetPath": "/assets/clothing/shoes/princess%20polly%20billini%20sidney%20heels.png"
+  },
+  {
+    "id": "footwear-princess-polly-britta-heels",
+    "category": "shoes",
+    "name": "Princess Polly Britta Heels",
+    "assetPath": "/assets/clothing/shoes/princess%20polly%20britta%20heels.png"
   }
 ]

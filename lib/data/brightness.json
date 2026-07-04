@@ -5,7 +5,7 @@
   "top-brown-cami": 90.9,
   "top-brown-tube-top": 90.86,
   "top-grey-one-shoulder": 183.08,
-  "top-scuffers-green-logo": 253.48,
+  "top-scuffers-green-logo": 253.52,
   "top-white-one-shoulder": 254.7,
   "top-white-tank": 254.41,
   "top-white-tube-top": 254.73,
@@ -34,10 +34,10 @@
   "footwear-steve-madden-labelle": 24.52,
   "footwear-salomon-acs-pros": 33.79,
   "footwear-puma-speedcats": 64.98,
-  "accessory-black-crew-socks": 40,
+  "accessory-black-crew-socks": 41,
   "accessory-white-crew-socks": 255,
-  "accessory-black-nike-dri-fits": 49.61,
-  "accessory-white-nike-dri-fits": 245.46,
+  "accessory-black-nike-dri-fits": 49.89,
+  "accessory-white-nike-dri-fits": 245.15,
   "accessory-white-ruffle-socks": 255,
   "hair-down": 48.95,
   "hair-low-bun": 50.82,
@@ -63,5 +63,8 @@
   "top-tank-brown": 85.77,
   "top-single-strap-contour-bralette": 35.73,
   "bottom-bermuda-slacks-shorts": 28.55,
-  "bottom-track-pants": 40.16
+  "bottom-track-pants": 40.4,
+  "footwear-dr-martens-temara-loafers": 25.37,
+  "footwear-princess-polly-billini-sidney-heels": 20,
+  "footwear-princess-polly-britta-heels": 24.91
 }
