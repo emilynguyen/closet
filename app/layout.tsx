@@ -24,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <OutfitProvider>{children}</OutfitProvider>
-        <Footer />
+        <OutfitProvider>
+          {children}
+          <Footer />
+        </OutfitProvider>
         <Analytics />
         {process.env.NODE_ENV === "production" && <GoogleAnalytics gaId="G-8DEJ105GX3" />}
       </body>

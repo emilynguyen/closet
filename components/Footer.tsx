@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { ChangelogModal } from "./ChangelogModal";
 import buildMeta from "@/lib/data/buildMeta.json";
+import { useOutfit } from "@/lib/context/outfitContext";
+import { exportAvatarPng } from "@/lib/utils/exportAvatar";
 
 function timeAgo(ms: number): string {
   const seconds = Math.floor(ms / 1000);
@@ -22,8 +24,20 @@ function timeAgo(ms: number): string {
 }
 
 export function Footer() {
+  const { outfit } = useOutfit();
   const [label, setLabel] = useState("");
   const [showChangelog, setShowChangelog] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
+
+  async function handleExport() {
+    if (isExporting) return;
+    setIsExporting(true);
+    try {
+      await exportAvatarPng(outfit);
+    } finally {
+      setIsExporting(false);
+    }
+  }
 
   useEffect(() => {
     const buildTime = buildMeta.buildTime;
@@ -39,7 +53,14 @@ export function Footer() {
     <>
       <footer className="bottom-0 left-0 right-0 h-8 grid grid-cols-2 items-center px-4 text-xs uppercase text-black bg-[var(--background)] border-t border-black whitespace-nowrap lg:fixed">
         <span>Made with &lt;3 by <a href="https://www.emilynguyen.co/" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-800">Emily</a></span>
-        <span className="text-right">
+        <span className="text-right space-x-4">
+          <button
+            onClick={handleExport}
+            disabled={isExporting}
+            className="underline hover:text-zinc-600 transition-colors uppercase disabled:opacity-50"
+          >
+            {isExporting ? "Exporting…" : "Export"}
+          </button>
           {label && (
             <button
               onClick={() => setShowChangelog(true)}
