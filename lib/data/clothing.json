@@ -425,5 +425,59 @@
     "category": "shoes",
     "name": "Princess Polly Britta Heels",
     "assetPath": "/assets/clothing/shoes/princess%20polly%20britta%20heels.png"
+  },
+  {
+    "id": "top-bikini-top-pink",
+    "category": "tops",
+    "name": "Bikini Top [Pink]",
+    "assetPath": "/assets/clothing/tops/bikini%20top%20%5Bpink%5D.png",
+    "undergarments": [
+      "nude-bra"
+    ]
+  },
+  {
+    "id": "top-bikini-top-red",
+    "category": "tops",
+    "name": "Bikini Top [Red]",
+    "assetPath": "/assets/clothing/tops/bikini%20top%20%5Bred%5D.png",
+    "undergarments": [
+      "nude-bra"
+    ]
+  },
+  {
+    "id": "top-bikini-top-yellow",
+    "category": "tops",
+    "name": "Bikini Top [Yellow]",
+    "assetPath": "/assets/clothing/tops/bikini%20top%20%5Byellow%5D.png",
+    "undergarments": [
+      "nude-bra"
+    ]
+  },
+  {
+    "id": "bottom-bikini-bottoms-pink",
+    "category": "bottoms",
+    "name": "Bikini Bottoms [Pink]",
+    "assetPath": "/assets/clothing/bottoms/bikini%20bottoms%20%5Bpink%5D.png",
+    "undergarments": [
+      "nude-underwear"
+    ]
+  },
+  {
+    "id": "bottom-bikini-bottoms-red",
+    "category": "bottoms",
+    "name": "Bikini Bottoms [Red]",
+    "assetPath": "/assets/clothing/bottoms/bikini%20bottoms%20%5Bred%5D.png",
+    "undergarments": [
+      "nude-underwear"
+    ]
+  },
+  {
+    "id": "bottom-bikini-bottoms-yellow",
+    "category": "bottoms",
+    "name": "Bikini Bottoms [Yellow]",
+    "assetPath": "/assets/clothing/bottoms/bikini%20bottoms%20%5Byellow%5D.png",
+    "undergarments": [
+      "nude-underwear"
+    ]
   }
 ]
